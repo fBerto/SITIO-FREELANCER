@@ -1,4 +1,5 @@
-:root{
+/*Globales*/
+:root {
     --blanco: #ffffff;
     --oscuro: #212121;
     --primario: #ffc107;
@@ -6,18 +7,135 @@
     --gris: #757575;
 
 }
+
 html {
     font-size: 62.5%;
+    box-sizing: border-box;
+
 }
-body{
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
     font-size: 16px;
     font-family: 'Krub', sans-serif;
 }
-.titulo{ 
-    text-align: center;
-    font-size: 3.8rem;    
-    color: var(--oscuro);
+.contenedor {
+    /*Utilizar en varios elementos para centrar */
+    max-width: 120rem;
+    margin: 0 auto;
 }
-.titulo span{
+
+.boton{
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin: 1rem;
     font-size: 2rem;
+    text-decoration: none; 
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    width: 90%;
+    text-align: center;
+}
+@media (min-width: 768px) {
+   .boton {
+    width: auto;
+   };
+} 
+
+/*Tipografia */
+h1 {
+    font-size: 3.8rem;
+}
+
+h2 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h1,h2,h3{
+    text-align: center;
+}
+
+/*Titulos*/
+.titulo span {
+    font-size: 2rem;
+}
+
+/*Navegacion principal*/
+.nav-bg {
+    background-color: var(--secundario);
+    /*utilidad*/
+}
+
+.nav-principal {
+    /*no se pq lo pone como column, si el sitio es grande => usa row y sino => usa display block */
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .nav-principal {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.nav-principal a {
+    /*modulo*/
+    display: block;
+    /*utilize toda la pantalla por cada bloque*/
+    text-align: center;
+    /*cada bloque en el centro*/
+    color: var(--blanco);
+    /* lo de arriba es para no confundirme con los ejes de los flexbox */
+    padding: 1rem;
+    text-decoration: none;
+    font-style: 2rem;
+    font-weight: bold;
+}
+
+.nav-principal a:hover {
+    color: var(--oscuro);
+    background-color: var(--primario);
+}
+
+/*Hero*/
+.hero {
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    position: relative;
+}
+
+.contenido-hero {
+    position: absolute;
+    background-color: rgba(0 0 0 / 70%);
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-hero h2,
+.contenido-hero p {
+    color: var(--blanco);
+}
+
+.contenido-hero .ubicacion{
+    display: flex;
+    align-items: flex-end;
 }
