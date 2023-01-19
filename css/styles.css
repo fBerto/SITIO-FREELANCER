@@ -5,6 +5,7 @@
     --primario: #ffc107;
     --secundario: #0097a7;
     --gris: #757575;
+    --grisClaro: #dfe9f3;
 
 }
 
@@ -23,31 +24,43 @@ html {
 body {
     font-size: 16px;
     font-family: 'Krub', sans-serif;
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco)100%);
 }
+
 .contenedor {
     /*Utilizar en varios elementos para centrar */
     max-width: 120rem;
     margin: 0 auto;
 }
 
-.boton{
+.boton {
     background-color: var(--secundario);
     color: var(--blanco);
     padding: 1rem 3rem;
     margin: 1rem;
     font-size: 2rem;
-    text-decoration: none; 
+    text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
     border-radius: 0.5rem;
     width: 90%;
     text-align: center;
 }
+
 @media (min-width: 768px) {
-   .boton {
-    width: auto;
-   };
-} 
+    .boton {
+        width: auto;
+    }
+
+    ;
+}
+
+.sombra {
+    box-shadow: 10px 10px 15px 0px rgba(112, 112, 112, 0.48);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
 
 /*Tipografia */
 h1 {
@@ -62,7 +75,9 @@ h3 {
     font-size: 1.8rem;
 }
 
-h1,h2,h3{
+h1,
+h2,
+h3 {
     text-align: center;
 }
 
@@ -116,6 +131,7 @@ h1,h2,h3{
     background-size: cover;
     height: 450px;
     position: relative;
+    margin-bottom: 2rem;
 }
 
 .contenido-hero {
@@ -135,7 +151,44 @@ h1,h2,h3{
     color: var(--blanco);
 }
 
-.contenido-hero .ubicacion{
+.contenido-hero .ubicacion {
     display: flex;
     align-items: flex-end;
+}
+
+/*Servicios*/
+@media (min-width: 768px) {
+    .servicios {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1rem;
+
+    }
+}
+
+.servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.servicio h3 {
+    color: var(--secundario);
+    font-weight: normal;
+}
+
+.servicio p {
+    line-height: 2;
+    text-align: center;
+}
+
+.servicio .iconos {
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
