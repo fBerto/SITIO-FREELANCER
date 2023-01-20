@@ -45,14 +45,20 @@ body {
     border-radius: 0.5rem;
     width: 90%;
     text-align: center;
+    border: none;
 }
 
 @media (min-width: 768px) {
     .boton {
+        margin-top: 3rem;
         width: auto;
     }
 
-    ;
+
+}
+
+.boton:hover {
+    cursor: pointer;
 }
 
 .sombra {
@@ -86,6 +92,26 @@ h3 {
     font-size: 2rem;
 }
 
+/*Utildidades*/
+.w-100 {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .boton {
+        width: auto;
+    }
+}
+
+.flex {
+    display: flex;
+}
+
+.alinear-derecha {
+    justify-content: flex-end;
+}
+
+
 /*Navegacion principal*/
 .nav-bg {
     background-color: var(--secundario);
@@ -115,7 +141,7 @@ h3 {
     /* lo de arriba es para no confundirme con los ejes de los flexbox */
     padding: 1rem;
     text-decoration: none;
-    font-style: 2rem;
+    font-size: 2rem;
     font-weight: bold;
 }
 
@@ -191,4 +217,65 @@ h3 {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+}
+
+/*Formualario*/
+.formualario {
+    background-color: var(--gris);
+    width: min(60rem, 100%);
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.formualario fieldset {
+    border: none;
+}
+
+.formualario legend {
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primario);
+}
+
+@media (min-width: 768px) {
+    .contenedor-campos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto 20rem;
+        column-gap: 1rem;
+    }
+    .campo:nth-child(3), 
+    .campo:nth-child(4){
+        grid-column: 1/3;
+    }
+}
+
+.campo {
+    margin-bottom: 1rem;
+}
+
+.campo label {
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.campo textarea {
+    height: 20rem;
+}
+
+.campo .imput-text {
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+
+.footer{
+    text-align: center;
 }
